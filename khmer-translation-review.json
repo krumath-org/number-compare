@@ -1,0 +1,707 @@
+{
+  "meta": {
+    "project": "number-compare",
+    "fork": "https://github.com/krumath-org/number-compare",
+    "source_en_files": [
+      "number-compare/number-compare-strings_en.json",
+      "number-suite-common/number-suite-common-strings_en.json",
+      "joist/joist-strings_en.json",
+      "scenery-phet/scenery-phet-strings_en.json"
+    ],
+    "locale_target": "km",
+    "generated": "2026-10-01",
+    "how_to_fill": [
+      "Fill empty \"khmer\" fields. Do not rename keys or change \"english\".",
+      "Keep placeholders {{likeThis}} and {0} unchanged inside Khmer text.",
+      "PRIORITY 1 — sim_visible_ui: title, Compare screen, comparison sentences, Auto Hear preference (7 strings).",
+      "PRIORITY 1b — suite_common_visible_ui: Lab screen, Total/Objects, number words 0–20, Second Language / Voice / Show Ones preferences (34 strings). Number words appear on-screen in sentences like \"three is less than five\".",
+      "PRIORITY 2 — shared_joist_chrome / shared_scenery_phet_chrome: menu, Reset All, Preferences tabs (prefilled from quadrilateral — review/adjust).",
+      "OPTIONAL — suite_common_a11y_optional: screen-reader phrases (PhET usually leaves these English).",
+      "Screens: Compare + Lab (Lab is the shared Number Suite lab). Home/nav chrome uses joist strings.",
+      "counting-common has only a library title (not shown in UI) — omitted.",
+      "Send this file back when ready; we will apply into babel as *-strings_km.json (+ joist/scenery-phet/number-suite-common as needed)."
+    ],
+    "counts": {
+      "sim_visible_ui": 7,
+      "suite_common_visible_ui": 34,
+      "suite_common_a11y_optional": 3,
+      "shared_joist_chrome": 60,
+      "shared_scenery_phet_chrome": 15,
+      "total": 119
+    }
+  },
+  "sim_visible_ui": {
+    "number-compare.title": {
+      "english": "Number Compare",
+      "khmer": "ការប្រៀបធៀបចំនួន",
+      "category": "title"
+    },
+    "screen.compare": {
+      "english": "Compare",
+      "khmer": "ប្រៀបធៀប",
+      "category": "screen_name"
+    },
+    "isLessThan": {
+      "english": "{{smallerNumber}} is less than {{greaterNumber}}",
+      "khmer": "{{smallerNumber}} តូចជាង {{greaterNumber}}",
+      "category": "comparison_sentence",
+      "notes": "Keep {{smallerNumber}} and {{greaterNumber}} placeholders unchanged. Number words fill these slots."
+    },
+    "isGreaterThan": {
+      "english": "{{greaterNumber}} is greater than {{smallerNumber}}",
+      "khmer": "{{greaterNumber}} ធំជាង {{smallerNumber}}",
+      "category": "comparison_sentence",
+      "notes": "Keep {{greaterNumber}} and {{smallerNumber}} placeholders unchanged."
+    },
+    "isEqualTo": {
+      "english": "{{equalNumberLeft}} is equal to {{equalNumberRight}}",
+      "khmer": "{{equalNumberLeft}} ស្មើនឹង {{equalNumberRight}}",
+      "category": "comparison_sentence",
+      "notes": "Keep {{equalNumberLeft}} and {{equalNumberRight}} placeholders unchanged."
+    },
+    "automaticallyHearNumberSentence": {
+      "english": "Automatically Hear Number Sentence",
+      "khmer": "ស្តាប់ល្បះចំនួនដោយស្វ័យប្រវត្តិ",
+      "category": "preferences"
+    },
+    "automaticallyHearNumberSentenceDescription": {
+      "english": "Hear the number sentence update automatically as you interact.",
+      "khmer": "ស្តាប់ការផ្លាស់ប្តូរល្បះចំនួនដោយស្វ័យប្រវត្តិកំឡុងពេលអ្នកធ្វើអន្តរកម្ម។",
+      "category": "preferences"
+    }
+  },
+  "suite_common_visible_ui": {
+    "screen.lab": {
+      "english": "Lab",
+      "khmer": "បន្ទប់ពិសោធន៍",
+      "category": "screen_name"
+    },
+    "zero": {
+      "english": "zero",
+      "khmer": "សូន្យ",
+      "category": "number_word",
+      "notes": "Shown/spoken in comparison sentences (0–20)."
+    },
+    "one": {
+      "english": "one",
+      "khmer": "មួយ",
+      "category": "number_word"
+    },
+    "two": {
+      "english": "two",
+      "khmer": "ពីរ",
+      "category": "number_word"
+    },
+    "three": {
+      "english": "three",
+      "khmer": "បី",
+      "category": "number_word"
+    },
+    "four": {
+      "english": "four",
+      "khmer": "បួន",
+      "category": "number_word"
+    },
+    "five": {
+      "english": "five",
+      "khmer": "ប្រាំ",
+      "category": "number_word"
+    },
+    "six": {
+      "english": "six",
+      "khmer": "ប្រាំមួយ",
+      "category": "number_word"
+    },
+    "seven": {
+      "english": "seven",
+      "khmer": "ប្រាំពីរ",
+      "category": "number_word"
+    },
+    "eight": {
+      "english": "eight",
+      "khmer": "ប្រាំបី",
+      "category": "number_word"
+    },
+    "nine": {
+      "english": "nine",
+      "khmer": "ប្រាំបួន",
+      "category": "number_word"
+    },
+    "ten": {
+      "english": "ten",
+      "khmer": "ដប់",
+      "category": "number_word"
+    },
+    "eleven": {
+      "english": "eleven",
+      "khmer": "ដប់មួយ",
+      "category": "number_word"
+    },
+    "twelve": {
+      "english": "twelve",
+      "khmer": "ដប់ពីរ",
+      "category": "number_word"
+    },
+    "thirteen": {
+      "english": "thirteen",
+      "khmer": "ដប់បី",
+      "category": "number_word"
+    },
+    "fourteen": {
+      "english": "fourteen",
+      "khmer": "ដប់បួន",
+      "category": "number_word"
+    },
+    "fifteen": {
+      "english": "fifteen",
+      "khmer": "ដប់ប្រាំ",
+      "category": "number_word"
+    },
+    "sixteen": {
+      "english": "sixteen",
+      "khmer": "ដប់ប្រាំមួយ",
+      "category": "number_word"
+    },
+    "seventeen": {
+      "english": "seventeen",
+      "khmer": "ដប់ប្រាំពីរ",
+      "category": "number_word"
+    },
+    "eighteen": {
+      "english": "eighteen",
+      "khmer": "ដប់ប្រាំបី",
+      "category": "number_word"
+    },
+    "nineteen": {
+      "english": "nineteen",
+      "khmer": "ដប់ប្រាំបួន",
+      "category": "number_word"
+    },
+    "twenty": {
+      "english": "twenty",
+      "khmer": "ម្ភៃ",
+      "category": "number_word"
+    },
+    "total": {
+      "english": "Total",
+      "khmer": "សរុប",
+      "category": "accordion_box"
+    },
+    "objects": {
+      "english": "Objects",
+      "khmer": "វត្ថុ",
+      "category": "accordion_box"
+    },
+    "secondLanguage": {
+      "english": "Second Language",
+      "khmer": "ភាសាទីពីរ",
+      "category": "preferences"
+    },
+    "secondLanguageDescription": {
+      "english": "Select a second language to support multilingual learning.",
+      "khmer": "ជ្រើសរើសភាសាទីពីរដើម្បីគាំទ្រដល់ការរៀនពហុភាសា។",
+      "category": "preferences"
+    },
+    "languageTitle": {
+      "english": "Language",
+      "khmer": "ភាសា",
+      "category": "preferences"
+    },
+    "voice": {
+      "english": "Voice",
+      "khmer": "សំឡេង",
+      "category": "preferences"
+    },
+    "toDisplayASecondLanguageDescription": {
+      "english": "To display a second language, run the multilingual version of this simulation at:",
+      "khmer": "ដើម្បីបង្ហាញភាសាទីពីរ សូមដំណើរការការពិសោធន៍ក្លែងធ្វើកំណែពហុភាសានៅត្រង់៖",
+      "category": "preferences",
+      "notes": "Often followed by a URL in the UI."
+    },
+    "showOnes": {
+      "english": "Show Ones",
+      "khmer": "បង្ហាញខ្ទង់រាយ",
+      "category": "preferences"
+    },
+    "showOnesDescription": {
+      "english": "Include the paper numbers on the Lab screen.",
+      "khmer": "បញ្ចូលលេខក្រដាសនៅលើអេក្រង់បន្ទប់ពិសោធន៍។",
+      "category": "preferences"
+    },
+    "noVoiceFoundDescription": {
+      "english": "There is no voice found on this device for the selected language.",
+      "khmer": "រកមិនឃើញសំឡេងអាននៅលើឧបករណ៍នេះសម្រាប់ភាសាដែលបានជ្រើសរើសទេ។",
+      "category": "preferences_dialog"
+    },
+    "yourDeviceMaySupportDescription": {
+      "english": "Your device may support downloading an additional voice for your language.",
+      "khmer": "ឧបករណ៍របស់អ្នកអាចគាំទ្រការទាញយកសំឡេងអានបន្ថែមសម្រាប់ភាសារបស់អ្នក។",
+      "category": "preferences_dialog"
+    },
+    "oneTwoThree": {
+      "english": "1 2 3",
+      "khmer": "1 2 3",
+      "category": "preferences_voice_test",
+      "notes": "Spoken when testing a voice in Preferences. Digits may stay as-is or use Khmer numerals if preferred."
+    }
+  },
+  "suite_common_a11y_optional": {
+    "a11y.carouselItemNode.accessibleNameSelected": {
+      "english": "{{value}}, selected",
+      "khmer": "{{value}}, បានជ្រើសរើស",
+      "category": "a11y",
+      "notes": "Screen reader only. Keep {{value}}. Optional."
+    },
+    "a11y.languageCarousel.accessibleName": {
+      "english": "Language, {{value}}",
+      "khmer": "ភាសា, {{value}}",
+      "category": "a11y",
+      "notes": "Screen reader only. Keep {{value}}. Optional."
+    },
+    "a11y.voiceCarousel.accessibleName": {
+      "english": "Voice, {{value}}",
+      "khmer": "សំឡេង, {{value}}",
+      "category": "a11y",
+      "notes": "Screen reader only. Keep {{value}}. Optional."
+    }
+  },
+  "shared_joist_chrome": {
+    "done": {
+      "english": "Done",
+      "khmer": "រួចរាល់",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "menuItem.options": {
+      "english": "Options…",
+      "khmer": "ជម្រើស…",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "menuItem.about": {
+      "english": "About…",
+      "khmer": "អំពី…",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "menuItem.phetWebsite": {
+      "english": "PhET Website…",
+      "khmer": "គេហទំព័រ PhET…",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "menuItem.reportAProblem": {
+      "english": "Report a Problem…",
+      "khmer": "រាយការណ៍បញ្ហា…",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "menuItem.screenshot": {
+      "english": "Screenshot",
+      "khmer": "រូបថតអេក្រង់",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "menuItem.fullscreen": {
+      "english": "Full Screen",
+      "khmer": "ពេញអេក្រង់",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "menuItem.getUpdate": {
+      "english": "Check for Updates…",
+      "khmer": "ពិនិត្យមើលបច្ចុប្បន្នភាព…",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "menuItem.enhancedSound": {
+      "english": "Extra Sound",
+      "khmer": "សំឡេងបន្ថែម",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "title.settings": {
+      "english": "Settings",
+      "khmer": "ការកំណត់",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "termsPrivacyAndLicensing": {
+      "english": "Terms, Privacy & Licensing",
+      "khmer": "លក្ខខណ្ឌ ឯកជនភាព និងអាជ្ញាបណ្ណ",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "privacyPolicy": {
+      "english": "Privacy Policy",
+      "khmer": "គោលការណ៍ឯកជនភាព",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "donateToPhet": {
+      "english": "Donate to PhET",
+      "khmer": "បរិច្ចាគដល់ PhET",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "license.title": {
+      "english": "License",
+      "khmer": "អាជ្ញាបណ្ណ",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "credits.title": {
+      "english": "Credits",
+      "khmer": "ការទទួលស្គាល់ការចូលរួម",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "credits.leadDesign": {
+      "english": "Lead Design: {0}",
+      "khmer": "អ្នកដឹកនាំការរចនា៖ {0}",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed. Keep placeholders like {{name}} or {0} unchanged in Khmer."
+    },
+    "credits.softwareDevelopment": {
+      "english": "Software Development: {0}",
+      "khmer": "ការអភិវឌ្ឍកម្មវិធី៖ {0}",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed. Keep placeholders like {{name}} or {0} unchanged in Khmer."
+    },
+    "credits.team": {
+      "english": "Team: {0}",
+      "khmer": "ក្រុមការងារ៖ {0}",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed. Keep placeholders like {{name}} or {0} unchanged in Khmer."
+    },
+    "credits.contributors": {
+      "english": "Contributors: {0}",
+      "khmer": "អ្នករួមចំណែក៖ {0}",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed. Keep placeholders like {{name}} or {0} unchanged in Khmer."
+    },
+    "credits.qualityAssurance": {
+      "english": "Quality Assurance: {0}",
+      "khmer": "ការធានាគុណភាព៖ {0}",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed. Keep placeholders like {{name}} or {0} unchanged in Khmer."
+    },
+    "credits.graphicArts": {
+      "english": "Graphic Arts: {0}",
+      "khmer": "សិល្បៈក្រាហ្វិក៖ {0}",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed. Keep placeholders like {{name}} or {0} unchanged in Khmer."
+    },
+    "credits.soundDesign": {
+      "english": "Sound Design: {0}",
+      "khmer": "ការរចនាសំឡេង៖ {0}",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed. Keep placeholders like {{name}} or {0} unchanged in Khmer."
+    },
+    "credits.translation": {
+      "english": "Translation",
+      "khmer": "ការបកប្រែ",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "credits.thanks": {
+      "english": "Thanks",
+      "khmer": "ថ្លែងអំណរគុណ",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "options.title": {
+      "english": "Options",
+      "khmer": "ជម្រើស",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "versionPattern": {
+      "english": "version {0}",
+      "khmer": "កំណែ {0}",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed. Keep placeholders like {{name}} or {0} unchanged in Khmer."
+    },
+    "updates.upToDate": {
+      "english": "This simulation is up to date.",
+      "khmer": "ការពិសោធន៍ក្លែងធ្វើនេះគឺទាន់សម័យហើយ។",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "updates.outOfDate": {
+      "english": "New version available",
+      "khmer": "មានកំណែថ្មី",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "updates.checking": {
+      "english": "Checking for updates…",
+      "khmer": "កំពុងពិនិត្យមើលបច្ចុប្បន្នភាព…",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "updates.offline": {
+      "english": "Unable to check for updates.",
+      "khmer": "មិនអាចពិនិត្យមើលបច្ចុប្បន្នភាពបានទេ។",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "updates.newVersionAvailable": {
+      "english": "There is a new version available: {0}.",
+      "khmer": "មានកំណែថ្មីដែលអាចប្រើបាន៖ {0}។",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed. Keep placeholders like {{name}} or {0} unchanged in Khmer."
+    },
+    "updates.yourCurrentVersion": {
+      "english": "Your current version is: {0}.",
+      "khmer": "កំណែបច្ចុប្បន្នរបស់អ្នកគឺ៖ {0}។",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed. Keep placeholders like {{name}} or {0} unchanged in Khmer."
+    },
+    "updates.getUpdate": {
+      "english": "Get Update…",
+      "khmer": "ធ្វើបច្ចុប្បន្នភាព…",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "updates.noThanks": {
+      "english": "No Thanks",
+      "khmer": "ទេ អរគុណ",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "translation.credits.link": {
+      "english": "Translation Credits",
+      "khmer": "ការទទួលស្គាល់ការបកប្រែ",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "thirdParty.credits.link": {
+      "english": "Third-party Credits",
+      "khmer": "ការទទួលស្គាល់ភាគីទីបី",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "keyboardShortcuts.title": {
+      "english": "Keyboard Shortcuts",
+      "khmer": "ផ្លូវកាត់ក្តារចុច",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "keyboardShortcuts.toGetStarted": {
+      "english": "to get started",
+      "khmer": "ដើម្បីចាប់ផ្តើម",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "simTitleWithScreenNamePattern": {
+      "english": "{{simName}} — {{screenName}}",
+      "khmer": "{{simName}} — {{screenName}}",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed. Keep placeholders like {{name}} or {0} unchanged in Khmer."
+    },
+    "projectorMode": {
+      "english": "Projector Mode",
+      "khmer": "របៀបម៉ាស៊ីនបញ្ចាំង",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.title": {
+      "english": "Preferences",
+      "khmer": "ចំណង់ចំណូលចិត្ត",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.general.title": {
+      "english": "General",
+      "khmer": "ទូទៅ",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.overview.title": {
+      "english": "Overview",
+      "khmer": "ទិដ្ឋភាពទូទៅ",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.simulation.title": {
+      "english": "Simulation",
+      "khmer": "ការពិសោធន៍ក្លែងធ្វើ",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.visual.title": {
+      "english": "Visual",
+      "khmer": "រូបភាព/គំហើញ",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.visual.interactiveHighlights": {
+      "english": "Interactive Highlights",
+      "khmer": "ការរំលេចពណ៌នៅពេលអន្តរកម្ម",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.visual.interactiveHighlightsDescription": {
+      "english": "Add visual highlights for mouse and touch as you interact.",
+      "khmer": "បន្ថែមការរំលេចពណ៌សម្រាប់កណ្ដុរ និងការប៉ះបញ្ជា នៅពេលអ្នកធ្វើអន្តរកម្ម។",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.visual.projectorModeDescription": {
+      "english": "Increase color contrast for better visibility in classrooms.",
+      "khmer": "បង្កើនកម្រិតច្បាស់នៃពណ៌សម្រាប់ភាពងាយមើលឃើញកាន់តែច្បាស់ក្នុងថ្នាក់រៀន។",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.audio.title": {
+      "english": "Audio",
+      "khmer": "សំឡេង",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.audio.sounds.title": {
+      "english": "Sounds",
+      "khmer": "សំឡេង",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.audio.sounds.extraSounds.title": {
+      "english": "Extra Sounds",
+      "khmer": "សំឡេងបន្ថែម",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.audio.audioFeatures.title": {
+      "english": "Audio Features",
+      "khmer": "មុខងារសំឡេង",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.audio.sounds.description": {
+      "english": "Play sonifications and sound effects as you interact.",
+      "khmer": "ចាក់សំឡេងតំណាងទិន្នន័យ និងសំឡេងបែបផែននៅពេលអ្នកធ្វើអន្តរកម្ម។",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.audio.sounds.extraSounds.description": {
+      "english": "Play additional sound that may be helpful for some learners.",
+      "khmer": "ចាក់សំឡេងបន្ថែមដែលអាចមានប្រយោជន៍សម្រាប់អ្នកសិក្សាមួយចំនួន។",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.input.title": {
+      "english": "Input",
+      "khmer": "ការបញ្ចូល",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.localization.title": {
+      "english": "Localization",
+      "khmer": "ការធ្វើមូលដ្ឋានីយកម្ម",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.localization.languageSelection.title": {
+      "english": "Languages",
+      "khmer": "ភាសា",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.localization.languageSelection.description": {
+      "english": "Change language to translate on-screen text. Additional descriptions, when present, remain in English.",
+      "khmer": "ផ្លាស់ប្តូរភាសាដើម្បីបកប្រែអត្ថបទលើអេក្រង់។ ការពិពណ៌នាបន្ថែម (ប្រសិនបើមាន) នឹងនៅតែជាភាសាអង់គ្លេស។",
+      "category": "shared_joist_chrome",
+      "notes": "Shared PhET menu/preferences chrome. khmer prefilled from function-builder — review and edit if needed."
+    },
+    "preferences.tabs.general.accessibilityIntro": {
+      "english": "We are adding features to our simulations to make them more inclusive. Some of these features support accessibility for learners with diverse needs and within diverse environments. Explore this menu to review or change the default presentation settings.",
+      "khmer": "យើងកំពុងអភិវឌ្ឍមុខងារបន្ថែមក្នុងការពិសោធន៍ ដើម្បីឱ្យអ្នកសិក្សាទាំងអស់អាចចូលរៀនបានកាន់តែងាយស្រួល។ មុខងារមួយចំនួនជួយគាំទ្រដល់ការប្រើប្រាស់របស់អ្នករៀនដែលមានតម្រូវការពិសេស និងស្ថិតក្នុងស្ថានភាពសិក្សាផ្សេងៗគ្នា។ អ្នកអាចចូលទៅកាន់ម៉ឺនុយនេះ ដើម្បីពិនិត្យ ឬកែសម្រួលការកំណត់បង្ហាញទូទៅតាមការចង់បាន។",
+      "category": "shared_joist_chrome",
+      "notes": "Was missing from initial review set (not in function-builder joist km). Added from mean-share-and-balance."
+    },
+    "preferences.tabs.general.moreAccessibility": {
+      "english": "Look for Inclusive Features on the Simulations Filter page of the PhET website to find all simulations with available features.",
+      "khmer": "សូមចូលទៅកាន់ទំព័រតម្រង (Filter) លើគេហទំព័រ PhET រួចជ្រើសរើស \"មុខងារបរិយាបន្ន\" ដើម្បីស្វែងរកការពិសោធន៍ទាំងអស់ដែលមានមុខងារជំនួយទាំងនេះ។",
+      "category": "shared_joist_chrome",
+      "notes": "Was missing from initial review set. Added from mean-share-and-balance."
+    }
+  },
+  "shared_scenery_phet_chrome": {
+    "keyboardHelpDialog.generalNavigation": {
+      "english": "General Navigation",
+      "khmer": "ការរុករកទូទៅ",
+      "category": "shared_scenery_phet"
+    },
+    "keyboardHelpDialog.basicActions": {
+      "english": "Basic Actions",
+      "khmer": "សកម្មភាពមូលដ្ឋាន",
+      "category": "shared_scenery_phet"
+    },
+    "keyboardHelpDialog.moveToNextItem": {
+      "english": "Move to next item",
+      "khmer": "រំកិលទៅធាតុបន្ទាប់",
+      "category": "shared_scenery_phet"
+    },
+    "keyboardHelpDialog.moveToPreviousItem": {
+      "english": "Move to previous item",
+      "khmer": "រំកិលទៅធាតុមុន",
+      "category": "shared_scenery_phet"
+    },
+    "keyboardHelpDialog.pressButtons": {
+      "english": "Press buttons",
+      "khmer": "ចុចប៊ូតុង",
+      "category": "shared_scenery_phet"
+    },
+    "keyboardHelpDialog.resetAll": {
+      "english": "Reset All",
+      "khmer": "កំណត់ឡើងវិញទាំងអស់",
+      "category": "shared_scenery_phet"
+    },
+    "keyboardHelpDialog.exitADialog": {
+      "english": "Exit a dialog",
+      "khmer": "ចាកចេញពីផ្ទាំងប្រអប់",
+      "category": "shared_scenery_phet"
+    },
+    "keyboardHelpDialog.toggleCheckboxes": {
+      "english": "Toggle checkboxes",
+      "khmer": "បិទ/បើកប្រអប់ធីក",
+      "category": "shared_scenery_phet"
+    },
+    "keyboardHelpDialog.or": {
+      "english": "or",
+      "khmer": "ឬ",
+      "category": "shared_scenery_phet"
+    },
+    "keyboardHelpDialog.hyphen": {
+      "english": "-",
+      "khmer": "-",
+      "category": "shared_scenery_phet"
+    },
+    "keyboardHelpDialog.moveDraggableItems": {
+      "english": "Move Draggable Items",
+      "khmer": "រំកិលធាតុដែលអាចអូសបាន",
+      "category": "shared_scenery_phet"
+    },
+    "keyboardHelpDialog.move": {
+      "english": "Move",
+      "khmer": "រំកិល",
+      "category": "shared_scenery_phet"
+    },
+    "keyboardHelpDialog.moveSlower": {
+      "english": "Move slower",
+      "khmer": "រំកិលឱ្យយឺតជាងមុន",
+      "category": "shared_scenery_phet"
+    },
+    "ResetAllButton.name": {
+      "english": "Reset All",
+      "khmer": "កំណត់ឡើងវិញទាំងអស់",
+      "category": "shared_scenery_phet"
+    },
+    "SoundToggleButton.name": {
+      "english": "Toggle Sound",
+      "khmer": "បិទ/បើកសំឡេង",
+      "category": "shared_scenery_phet"
+    }
+  }
+}

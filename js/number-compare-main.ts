@@ -1,10 +1,13 @@
-// Copyright 2019-2025, University of Colorado Boulder
+// Copyright 2019-2026, University of Colorado Boulder
 
 /**
  * Main entry point for the sim.
  *
  * @author Chris Klusendorf (PhET Interactive Simulations)
  */
+
+// Must be first: sets Kantumruy Pro before any PhetFont is constructed at import time.
+import './applyKantumruyFontFamily.js';
 
 import DerivedProperty from '../../axon/js/DerivedProperty.js';
 import audioManager from '../../joist/js/audioManager.js';
@@ -16,6 +19,7 @@ import AutoHearControl from '../../number-suite-common/js/common/view/AutoHearCo
 import LanguageAndVoiceControl from '../../number-suite-common/js/common/view/LanguageAndVoiceControl.js';
 import NumberSuiteCommonPreferencesNode from '../../number-suite-common/js/common/view/NumberSuiteCommonPreferencesNode.js';
 import LabScreen from '../../number-suite-common/js/lab/LabScreen.js';
+import { combineOptions } from '../../phet-core/js/optionize.js';
 import MathSymbols from '../../scenery-phet/js/MathSymbols.js';
 import DisplayGlobals from '../../scenery/js/display/DisplayGlobals.js';
 import isSettingPhetioStateProperty from '../../tandem/js/isSettingPhetioStateProperty.js';
@@ -26,6 +30,7 @@ import NumberComparePreferencesNode from './common/view/NumberComparePreferences
 import numberCompareSpeechSynthesisAnnouncer from './common/view/numberCompareSpeechSynthesisAnnouncer.js';
 import numberCompareUtteranceQueue from './common/view/numberCompareUtteranceQueue.js';
 import CompareScreen from './compare/CompareScreen.js';
+import createLanguageSwitch from './createLanguageSwitch.js';
 import NumberCompareStrings from './NumberCompareStrings.js';
 
 const numberCompareTitleStringProperty = NumberCompareStrings[ 'number-compare' ].titleStringProperty;
@@ -74,21 +79,19 @@ const simOptions: SimOptions = {
   } )
 };
 
-// launch the sim - beware that scenery Image nodes created outside of simLauncher.launch() will have zero bounds
-// until the images are fully loaded, see https://github.com/phetsims/coulombs-law/issues/70
-simLauncher.launch( () => {
+const launchSimulation = (): void => {
+  localeProperty.value = 'km';
 
   const sim = new Sim( numberCompareTitleStringProperty, [
     new CompareScreen( Tandem.ROOT.createTandem( 'compareScreen' ) ),
     new LabScreen( LAB_SCREEN_SYMBOLS, numberComparePreferences, Tandem.ROOT.createTandem( 'numberCompareLabScreen' ) )
-  ], simOptions );
+  ], combineOptions<SimOptions>( {}, simOptions, {
+    homeScreenWarningNode: createLanguageSwitch()
+  } ) );
   sim.start();
 
-  // initialize the SpeechSynthesisAnnouncers that will use speech synthesis for general sim use and setting preferences
   if ( SpeechSynthesisAnnouncer.isSpeechSynthesisSupported() ) {
     numberCompareSpeechSynthesisAnnouncer.initialize( DisplayGlobals.userGestureEmitter, {
-
-      // specify the Properties that control whether output is allowed with speech synthesis
       speechAllowedProperty: new DerivedProperty( [
         sim.isConstructionCompleteProperty,
         sim.browserTabVisibleProperty,
@@ -103,4 +106,18 @@ simLauncher.launch( () => {
   }
 
   numberCompareUtteranceQueue.initialize( sim.selectedScreenProperty );
+};
+
+const kantumruyFont = new FontFace(
+  'Kantumruy Pro',
+  `url(${new URL( 'images/KantumruyProKhmer.woff2', window.location.href )})`,
+  { weight: '100 900' }
+);
+
+kantumruyFont.load().then( loadedFont => {
+  document.fonts.add( loadedFont );
+  simLauncher.launch( launchSimulation );
+} ).catch( error => {
+  console.error( 'Unable to load Kantumruy Pro; using the default font.', error );
+  simLauncher.launch( launchSimulation );
 } );
